@@ -16,6 +16,7 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { BlogTemplateComponent } from './common/blog-template/blog-template.component';
+import { AuthGaurdService } from 'auth-gaurd.service';
 
 const routes = [
   {
@@ -32,7 +33,7 @@ const routes = [
     component: SignupComponent
   },{
     path:"create-blog",
-    component:CreateBlogComponent
+    component:CreateBlogComponent,canActivate:[AuthGaurdService]
   },
   {path:"catagory/:id",component:CatagoryBlogComponent},
   {path:'blog/:id',component:BlogComponent},{path:"user/profile",component:ProfileComponent},
